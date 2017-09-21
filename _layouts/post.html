@@ -2,16 +2,19 @@
 layout: default
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
+<article>
 
-  <div class="entry">
-    {{ content }}
+  <h2 itemprop="name"><a href="{{ site.baseurl }}{{ post.url }}" itemprop="url">{{ page.title }}</a></h2>
+
+  <div class="post-meta">
+    <time datetime="{{ page.date | date_to_long_string }}">{{ page.date | date_to_long_string }}</time>
   </div>
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
+  <section>
+    {{content}}
+  </section>
 
-  {% include disqus.html %}
+    {% include footer.html %}
+
+  </div>
 </article>
