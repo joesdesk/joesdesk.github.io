@@ -1,185 +1,120 @@
-# Immaculate
+> March, 2016: If you're on an old version of Jekyll Now and run into a) build warnings or b) syntax highlighting issues caused by [Jekyll 3 and GitHub Pages updates](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0), just :sparkles:[update your _config.yml](https://github.com/barryclark/jekyll-now/pull/445/files):sparkles: and you'll be set!
 
-A beautiful, fast, AMP-compliant Jekyll theme based on Tufte CSS.
+# Jekyll Now
 
-[Check it out here!](https://cdn.ampproject.org/c/siawyoung.com/immaculate/)
+**Jekyll** is a static site generator that's perfect for GitHub hosted blogs ([Jekyll Repository](https://github.com/jekyll/jekyll))
 
-[Google AMP](https://www.ampproject.org/)
+**Jekyll Now** makes it easier to create your Jekyll blog, by eliminating a lot of the up front setup.
 
-[Tufte CSS](https://github.com/edwardtufte/tufte-css)
+- You don't need to touch the command line
+- You don't need to install/configure ruby, rvm/rbenv, ruby gems :relaxed:
+- You don't need to install runtime dependencies like markdown processors, Pygments, etc
+- If you're on Windows, this will make setting up Jekyll a lot easier
+- It's easy to try out, you can just delete your forked repository if you don't like it
 
-Immaculate is really fast, thanks to Google AMP. When served over Google's CDN, you will see typical `DOMContentLoaded` times of well under 100ms (when using the leaner stylesheet, see below). The benefits are most obvious for slower connections. On the *Regular - 2G* throttling setting in Chrome, the demo page still manages a `DOMContentLoaded` of under 500ms.
+In a few minutes you'll be set up with a minimal, responsive blog like the one below giving you more time to spend on writing epic blog posts!
 
-Immaculate includes tag support for some of the more commonly-used Tufte CSS layout options, including sidenotes, margin notes, and full-width figures. Other features, such as `newthought` or epigraphs, can be used by typing raw HTML in your Markdown files. I might add helper tags for these in the future.
+![Jekyll Now Theme Screenshot](/images/jekyll-now-theme-screenshot.jpg "Jekyll Now Theme Screenshot")
 
-**Caveat (need hep!)**: AMP HTML does not allow form elements, including checkboxes, which are used in Tufte CSS to toggle the display of sidenotes and margin notes at smaller widths. As such, I've modified Immaculate to disable this functionality at smaller widths for the time being. It's a big deal, and I'm looking for help on emulating this functionality without using checkboxes.
+## Quick Start
 
-## Getting Started
+### Step 1) Fork Jekyll Now to your User Repository
 
-```
-git clone git@github.com:siawyoung/immaculate.git
-cd immaculate
-bundle install
-bundle exec jekyll serve --baseurl ''
-```
+Fork this repo, then rename the repository to yourgithubusername.github.io.
 
-Modify the template files and `_config.yml` to your liking, and publish away!
+Your Jekyll blog will often be viewable immediately at <https://yourgithubusername.github.io> (if it's not, you can often force it to build by completing step 2)
 
-## Helper Tags
+![Step 1](/images/step1.gif "Step 1")
 
-Immaculate comes with a few helper tags. The source code for these tags can be found in `_plugins/shortcodes.rb`.
+### Step 2) Customize and view your site
 
-### Image
+Enter your site name, description, avatar and many other options by editing the _config.yml file. You can easily turn on Google Analytics tracking, Disqus commenting and social icons here too.
 
-```
-{% image <src> <width> <height> <option?> %}
-```
+Making a change to _config.yml (or any file in your repository) will force GitHub Pages to rebuild your site with jekyll. Your rebuilt site will be viewable a few seconds later at <https://yourgithubusername.github.io> - if not, give it ten minutes as GitHub suggests and it'll appear soon
 
-The `image` tag allows you to insert AMP-compliant images into the post.
+> There are 3 different ways that you can make changes to your blog's files:
 
-`src` is the `src` attribute of the image tag.
+> 1. Edit files within your new username.github.io repository in the browser at GitHub.com (shown below).
+> 2. Use a third party GitHub content editor, like [Prose by Development Seed](http://prose.io). It's optimized for use with Jekyll making markdown editing, writing drafts, and uploading images really easy.
+> 3. Clone down your repository and make updates locally, then push them to your GitHub repository.
 
-`width` and `height` of the image must be specified, as per AMP specifications.
+![_config.yml](/images/config.png "_config.yml")
 
-`option` - an optional argument which supports the following options:
+### Step 3) Publish your first blog post
 
-- `fw` - makes the image full width
-- `raw` - outputs the raw `amp-img` tag, can be used in conjunction with margin notes
+Edit `/_posts/2014-3-3-Hello-World.md` to publish your first blog post. This [Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/) might come in handy.
 
-##### Example usage
+![First Post](/images/first-post.png "First Post")
 
-```
-{% image https://image.com/image.jpg 1200 600 fw %}
-```
+> You can add additional posts in the browser on GitHub.com too! Just hit the + icon in `/_posts/` to create new content. Just make sure to include the [front-matter](http://jekyllrb.com/docs/frontmatter/) block at the top of each new blog post and make sure the post's filename is in this format: year-month-day-title.md
 
-### Youtube
+## Local Development
 
-```
-{% youtube <id> <width> <height> <option?> %}
-```
+1. Install Jekyll and plug-ins in one fell swoop. `gem install github-pages` This mirrors the plug-ins used by GitHub Pages on your local machine including Jekyll, Sass, etc.
+2. Clone down your fork `git clone https://github.com/yourusername/yourusername.github.io.git`
+3. Serve the site and watch for markup/sass changes `jekyll serve`
+4. View your website at http://127.0.0.1:4000/
+5. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
 
-The `youtube` tag allows you to insert AMP-compliant embedded Youtube videos into the post.
+## Moar!
 
-`id` is the Youtube viddeo ID.
+I've created a more detailed walkthrough, [**Build A Blog With Jekyll And GitHub Pages**](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/) over at the Smashing Magazine website. Check it out if you'd like a more detailed walkthrough and some background on Jekyll. :metal:
 
-`width` and `height` of the video must be specified, as per AMP specifications.
+It covers:
 
-`option` - an optional argument which supports the following options:
+- A more detailed walkthrough of setting up your Jekyll blog
+- Common issues that you might encounter while using Jekyll
+- Importing from Wordpress, using your own domain name, and blogging in your favorite editor
+- Theming in Jekyll, with Liquid templating examples
+- A quick look at Jekyll 2.0’s new features, including Sass/Coffeescript support and Collections
 
-- `fw` - makes the video full width
-- `raw` - outputs the raw `amp-youtube` tag, can be used in conjunction with margin notes
+## Jekyll Now Features
 
-##### Example usage
+✓ Command-line free _fork-first workflow_, using GitHub.com to create, customize and post to your blog  
+✓ Fully responsive and mobile optimized base theme (**[Theme Demo](http://jekyllnow.com)**)  
+✓ Sass/Coffeescript support using Jekyll 2.0  
+✓ Free hosting on your GitHub Pages user site  
+✓ Markdown blogging  
+✓ Syntax highlighting  
+✓ Disqus commenting  
+✓ Google Analytics integration  
+✓ SVG social icons for your footer  
+✓ 3 http requests, including your avatar  
 
-```
-{% youtube aj2h3h1sf 600 400 %}
-```
+✘ No installing dependencies
+✘ No need to set up local development  
+✘ No configuring plugins  
+✘ No need to spend time on theming  
+✘ More time to code other things ... wait ✓!  
 
-### Sidenote
+## Questions?
 
-(See caveat above)
+[Open an Issue](https://github.com/barryclark/jekyll-now/issues/new) and let's chat!
 
-```
-{% sidenote <id> <body> %}
-```
+## Other forkable themes
 
-The `sidenote` tag allows you insert sidenotes into the post.
+You can use the [Quick Start](https://github.com/barryclark/jekyll-now#quick-start) workflow with other themes that are set up to be forked too! Here are some of my favorites:
 
-`id` is a unique identifier for the sidenote, and it can be anything - it will not show up visually.
-
-`body` is the body of the sidenote. It can also accommodate `span`-level HTML elements (`<b>`, `<em>`, `<i>`, no block-level elements).
-
-##### Example usage
-
-```
-This is a very long{% sidenote meh Yes, <i>very</i> long. %} sentence.
-```
-
-### Margin Note
-
-(See caveat above)
-
-```
-{% marginnote <id> %}
-<body>
-{% endmarginnote %}
-```
-
-The `marginnote` tag block allows you to insert margin notes into the post.
-
-`id` is a unique identifier for the margin note, and it can be anything - it will not show up visually.
-
-`body` is the body of the sidenote. It can also accommodate `span`-level HTML elements (`<b>`, `<em>`, `<i>`, no block-level elements).
-
-You can also use margin notes in conjunction with `image` and `youtube` tags by specifying the `raw` option.
-
-##### Example usage
-
-```
-{% marginnote yt %}
-{% youtube aj2h3h1sf 350 200 raw %}
-This is a <b>extremely</b> succinct example.
-{% endmarginnote %}
-```
-
-### Blockquote
-
-```
-{% blockquote <footer> %}
-<body>
-{% endblockquote %}
-```
-
-Standard Markdown blockquotes are supported by Immaculate. Additionally, the `blockquote` tag block allows you to insert Tufte-styled blockquotes with footers.
-
-##### Example usage
-
-```
-{% blockquote Friedrich Nietzsche, Thus Spoke Zarathustra %}
-
-But say, my brothers, what can the child do that even the lion could not do? Why must the preying lion still become a child? The child is innocence and forgetting, a new beginning, a game, a self-propelled wheel, a first movement, a sacred “Yes.” For the game of creation, my brothers, a sacred “Yes” is needed: the spirit now wills his own will, and he who had been lost to the world now conquers the world.
-
-{% endblockquote %}
-```
-
-## Even faster performance
-
-By default, Immaculate will utilize Tufte CSS's default font stack, which uses `et-book`. The custom font files are about 160kb in total, which is somewhat of a strain. If performance is important, Immaculate also ships with a leaner version of Tufte CSS, which uses just [the Palatino stack instead](http://www.cssfontstack.com/Palatino). It has 99.29% Mac and 86.13% Windows distribution.
-
-You just need to change the following line in `_includes/styles.scss`:
-
-```
-@import 'tufte';
-// change to:
-@import 'lean_tufte';
-```
-
-Just from pure anecdotal experience, using the leaner stylesheet reduces typical `DOMContentLoaded` times from 300ms down to 50ms when served through Google's CDN. Personally, `et-book` just looks a lot better to me, so pick whatever floats your boat.
-
-## Syntax highlighting
-
-Immaculate supports syntax highlighting, but the stylesheet is commented out by default to keep the page lean. Simply uncomment the following line in `_includes/styles.scss`:
-
-```css
-// @import 'syntax-highlighting';
-```
-
-## FAQ
-
-*How can I use the sans-serif versin of Tufte CSS, which uses Gill Sans?*
-
-You can override the CSS style in `_includes/styles.scss` with the font stack of your choice:
-
-```
-body {
-  font-family: "Gill Sans"
-}
-```
+- [Hyde](https://github.com/poole/hyde) by MDO
+- [Lanyon](https://github.com/poole/lanyon) by MDO
+- [mojombo.github.io](https://github.com/mojombo/mojombo.github.io) by Tom Preston-Werner
+- [Left](https://github.com/holman/left) by Zach Holman
+- [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) by Michael Rose
+- [Skinny Bones](https://github.com/mmistakes/skinny-bones-jekyll) by Michael Rose
 
 ## Credits
 
-Credits to [Amplify](https://github.com/ageitgey/amplify) for most of the AMP-related code.
+- [Jekyll](https://github.com/jekyll/jekyll) - Thanks to its creators, contributors and maintainers.
+- [SVG icons](https://github.com/neilorangepeel/Free-Social-Icons) - Thanks, Neil Orange Peel. They're beautiful.
+- [Solarized Light Pygments](https://gist.github.com/edwardhotchkiss/2005058) - Thanks, Edward.
+- [Joel Glovier](http://joelglovier.com/writing/) - Great Jekyll articles. I used Joel's feed.xml in this repository.
+- [David Furnes](https://github.com/dfurnes), [Jon Uy](https://github.com/jonuy), [Luke Patton](https://github.com/lkpttn) - Thanks for the design/code reviews.
+- [Bart Kiers](https://github.com/bkiers), [Florian Simon](https://github.com/vermluh), [Henry Stanley](https://github.com/henryaj), [Hun Jae Lee](https://github.com/hunjaelee), [Javier Cejudo](https://github.com/javiercejudo), [Peter Etelej](https://github.com/etelej), [Ben Abbott](https://github.com/jaminscript), [Ray Nicholus](https://github.com/rnicholus), [Erin Grand](https://github.com/eringrand), [Léo Colombaro](https://github.com/LeoColomb), [Dean Attali](https://github.com/daattali), [Clayton Errington](https://github.com/cjerrington), [Colton Fitzgerald](https://github.com/coltonfitzgerald), [Trace Mayer](https://github.com/sunnankar) - Thanks for your [fantastic contributions](https://github.com/barryclark/jekyll-now/commits/master) to the project!
 
-## License
+## Contributing
 
-MIT
+Issues and Pull Requests are greatly appreciated. If you've never contributed to an open source project before I'm more than happy to walk you through how to create a pull request.
+
+You can start by [opening an issue](https://github.com/barryclark/jekyll-now/issues/new) describing the problem that you're looking to resolve and we'll go from there.
+
+I want to keep Jekyll Now as minimal as possible. Every line of code should be one that's useful to 90% of the people using it. Please bear that in mind when submitting feature requests. If it's not something that most people will use, it probably won't get merged. :guardsman:
