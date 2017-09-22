@@ -2,7 +2,7 @@ title: Immaculate
 description: >
   A beautiful, fast, AMP-compliant Jekyll theme based on Tufte CSS.
 baseurl: "/immaculate"
-url: http://joesdesk.github.io/
+url: "http://joesdesk.github.io/"
 paginate:	2 # The number of posts to show per page on your homepage
 name: "Jomar Sastrillo"
 markdown: kramdown
