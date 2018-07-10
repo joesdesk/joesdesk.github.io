@@ -16,7 +16,7 @@
 title: joesdesk
 email: jomar.sastrillo@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Website for Jomar's profile 
+  Website for Jomar's profile
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  joesdesk
@@ -25,7 +25,7 @@ github_username:  joesdesk
 markdown: kramdown
 theme: minima
 plugins:
-  - jekyll-feed
+#  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
