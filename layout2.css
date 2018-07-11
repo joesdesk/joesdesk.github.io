@@ -5,29 +5,27 @@ html, body, div, header, footer {
 }
 
 html { max-width: 100%; }
-div#content{ display: block; float: left; }
+header, div#content, footer {
+  display: block;
+  width: 100%;
+  float: left;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    div#articles{ max-width: 100%; float: inherit; }
-    div#essays{ max-width: 100%; float: inherit; }
+  div#articles{ max-width: inherit; float: inherit; }
+  div#essays{ max-width: inherit; float: inherit; }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    div#articles{ margin-right: 300px; float: left; }
-    div#essays{ width: 300px; margin-left:-300px; float: left; }
+@media only screen and (min-width: 600px) and (max-width: 960px){
+  div#articles{ width: auto; margin-right: 300px; float: left; }
+  div#essays{ width: 300px; margin-left: -300px; float: right; }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 960px) {
   html { max-width: 960px; margin: 0px auto; }
-    div#articles{ max-width: 660px; float: inherit; }
+    div#articles{ width: 660px; float: inherit; }
     div#essays{ max-width: 300px; float: inherit; }
-}
-
-header, footer {
-  display: block;
-  float: left;
-  width: 100%;
 }
