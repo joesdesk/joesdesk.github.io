@@ -1,0 +1,33 @@
+html, body, div, header, footer {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+html { max-width: 100%; }
+div#content{ display: block; float: left; }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    div#articles{ max-width: 100%; float: inherit; }
+    div#essays{ max-width: 100%; float: inherit; }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    div#articles{ margin-right: 300px; float: left; }
+    div#essays{ width: 300px; margin-left:-300px; float: left; }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 960px) {
+  html { max-width: 960px; margin: 0px auto; }
+    div#articles{ max-width: 660px; float: inherit; }
+    div#essays{ max-width: 300px; float: inherit; }
+}
+
+header, footer {
+  display: block;
+  float: left;
+  width: 100%;
+}
