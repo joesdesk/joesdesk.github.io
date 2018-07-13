@@ -4,6 +4,7 @@ html, body, div, header, footer {
   padding: 0px;
 }
 
+/* Default layout suited for phones */
 html { max-width: 100%; }
 header, div#content, footer {
   display: block;
