@@ -41,3 +41,10 @@ header a {
   float: right;
   padding: 10px;
 }
+
+/* Footer layout */
+footer {
+  padding: 15px 0px 15px;
+  text-align: center;
+  display: block;
+}
