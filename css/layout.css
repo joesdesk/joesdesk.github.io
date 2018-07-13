@@ -5,43 +5,101 @@ html, body, div, header, footer {
 }
 
 /* Default layout suited for phones */
-html { max-width: 100%; }
-header, div#content, footer {
+html {
+  width: 100%;
+}
+
+header, footer {
   display: block;
   width: 100%;
-  float: left;
 }
 
-/* Extra small devices (phones, 600px and down) */
+div#content {
+  display: flex;
+  width: 100%
+}
+
+/* Small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  div#articles{ max-width: inherit; float: inherit; }
-  div#essays{ max-width: inherit; float: inherit; }
+
+  div#content {
+    flex-direction: column;
+  }
+
+    div#articles{
+      max-width: inherit;
+      float: left;
+    }
+
+    div#essays{
+      max-width: inherit;
+      float: left;
+    }
+
 }
 
-/* Small devices (portrait tablets and large phones, 600px to 960px) */
-@media only screen and (min-width: 600px) and (max-width: 960px){
-  div#articles{ width: auto; margin-right: 300px; float: left; }
-  div#essays{ width: 300px; margin-left: -300px; float: right; }
+/* Medium devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px){
+
+  div#content {
+    flex-direction: row;
+  }
+
+    div#articles{
+      flex-grow: 1;
+      width: auto;
+    }
+
+    div#essays{
+      flex-grow: 0;
+      width: 300px;
+    }
+
 }
 
-/* Medium devices (landscape tablets, 960px and up) */
+/* Larger devices (landscape tablets, 960px and up) */
 @media only screen and (min-width: 960px) {
-  html { max-width: 960px; margin: 0px auto; }
-    div#articles{ width: 660px; float: inherit; }
-    div#essays{ max-width: 300px; float: inherit; }
+
+  html {
+    width: 960px;
+    margin: 0px auto;
+  }
+
 }
 
-/* Header layout */
-header div {
-  margin-top: 15px;
-  margin-bottom: -50px;
-  text-align: center;
+/* Laying out the header */
+header {
+  overflow: auto;
 }
 
-header a {
-  float: right;
-  padding: 10px;
-}
+  header a {
+    display: block;
+    margin-top: 20px;
+    padding: 5px 0px 5px;
+    overflow: auto;
+
+    text-decoration: none;
+  }
+
+  header a.home {
+    margin-left: 50px;
+    float: left;
+  }
+
+  header a.badge {
+    margin-right: 20px;
+    float: right;
+  }
+
+  header a.home span#logo {
+    color: white;
+    text-decoration: none;
+
+    display: block;
+    height: 25px;
+    margin: 0px;
+    padding: 0px;
+  }
 
 /* Footer layout */
 footer {
