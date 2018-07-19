@@ -30,8 +30,16 @@ header, footer {
 
 }
 
+/* Header and footer layout */
+a.home span#logo {
+  color: white;
+  text-decoration: none;
+  font: bold 20px/22px "PT Sans", Arial, Helvetica, sans-serif;
+}
+
 /* Header layout */
 header a {
+  display: block;
   margin: 20px 0px 5px;
 }
 
@@ -45,11 +53,6 @@ header a.home {
 header a.home span#logo {
   position: absolute;
   bottom: 0px;
-
-  color: white;
-  text-decoration: none;
-
-  font: bold 20px/22px "PT Sans", Arial, Helvetica, sans-serif;
 }
 
 header a.badge {
@@ -59,15 +62,17 @@ header a.badge {
 
 /* Footer layout */
 footer a {
-  display: block;
-  margin-bottom: 20px;
-  padding: 5px 0px 5px;
-  overflow: auto;
-
-  text-decoration: none;
+  margin: 20px 0px 5px;
 }
 
 footer a.home {
-  margin-left: 50px;
+  position: relative;
   float: left;
+  margin: 5px 100px 20px 50px;
+  height: 25px;
+}
+
+footer a.home span#logo {
+  position: absolute;
+  bottom: 0px;
 }
