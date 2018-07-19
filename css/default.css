@@ -1,0 +1,73 @@
+/* Load google fonts via API */
+@import "https://fonts.googleapis.com/css?family=PT+Sans";
+
+/* Reset layouts */
+html, body, div, header, footer,
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+/* Default layout suited for phones */
+html, body {
+  width: 100%;
+}
+
+/* Header and footer defaults */
+header, footer {
+  overflow: auto;
+  background-color: black;
+}
+
+/* Larger devices (landscape tablets, 960px and up) */
+@media only screen and (min-width: 960px) {
+
+  html {
+    width: 960px;
+    margin: 0px auto;
+  }
+
+}
+
+/* Header layout */
+header a {
+  margin: 20px 0px 5px;
+}
+
+header a.home {
+  position: relative;
+  float: left;
+  margin: 20px 100px 0px 50px;
+  height: 25px;
+}
+
+header a.home span#logo {
+  position: absolute;
+  bottom: 0px;
+
+  color: white;
+  text-decoration: none;
+
+  font: bold 20px/22px "PT Sans", Arial, Helvetica, sans-serif;
+}
+
+header a.badge {
+  margin-right: 20px;
+  float: right;
+}
+
+/* Footer layout */
+footer a {
+  display: block;
+  margin-bottom: 20px;
+  padding: 5px 0px 5px;
+  overflow: auto;
+
+  text-decoration: none;
+}
+
+footer a.home {
+  margin-left: 50px;
+  float: left;
+}
