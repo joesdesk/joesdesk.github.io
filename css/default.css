@@ -1,23 +1,22 @@
 /* Load google fonts via API */
-@import "https://fonts.googleapis.com/css?family=PT+Sans";
+@import url("https://fonts.googleapis.com/css?family=Assistant");
+@import url("https://fonts.googleapis.com/css?family=Ruda");
 
 /* Reset layouts */
 html, body, div, header, footer,
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, a, p, span, img {
   margin: 0px;
   border: 0px;
   padding: 0px;
 }
 
+h1, h2, h3, h4, h5, h6, a, p, span, img {
+  line-height: 100%;
+}
+
 /* Default layout suited for phones */
 html, body {
   width: 100%;
-}
-
-/* Header and footer defaults */
-header, footer {
-  overflow: auto;
-  background-color: black;
 }
 
 /* Larger devices (landscape tablets, 960px and up) */
@@ -30,49 +29,70 @@ header, footer {
 
 }
 
-/* Header and footer layout */
-a.home span#logo {
-  color: white;
-  text-decoration: none;
-  font: bold 20px/22px "PT Sans", Arial, Helvetica, sans-serif;
-}
-
-/* Header layout */
-header a {
+/* Header and footer defaults */
+header, footer {
   display: block;
-  margin: 20px 0px 5px;
+  overflow: hidden;
+  background-color: #000080;
 }
 
-header a.home {
-  position: relative;
+header {
+  padding-top: 20px;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+footer {
+  padding-top: 8px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Header components layout */
+header div, footer div {
+  display: block;
   float: left;
-  margin: 20px 100px 0px 50px;
-  height: 25px;
+  margin-top: 5px;
 }
 
-header a.home span#logo {
-  position: absolute;
-  bottom: 0px;
+header div.home {
+  width: 300px;
+  text-align: center;
 }
 
-header a.badge {
-  margin-right: 20px;
+header div.badges {
+  width: 150px;
   float: right;
 }
 
-/* Footer layout */
-footer a {
-  margin: 20px 0px 5px;
+header div.badges a {
+  margin-right: 20px;
 }
 
-footer a.home {
-  position: relative;
-  float: left;
-  margin: 5px 100px 20px 50px;
+/* Footer components layout */
+footer div.copyright {
+  width: 100%;
+  text-align: center;
+}
+
+footer div.copyright span{
+  color: white;
+  font: 400 14px/16px "Assistant", Arial, Helvetica, sans-serif;
+}
+
+/* Logo layout */
+span.logo {
+  display: inline-flex;
   height: 25px;
+  align-items: center;
 }
 
-footer a.home span#logo {
-  position: absolute;
-  bottom: 0px;
+span.logo {
+  color: white;
+  text-decoration: none;
+  font: 400 30px/32px "Assistant", Arial, Helvetica, sans-serif;
+}
+
+span.logo span {
+  font-weight: 700;
 }
