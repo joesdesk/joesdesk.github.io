@@ -1,0 +1,99 @@
+/* Core style of module containers */
+/*#content { /*display: flex; width: 100%; }*/
+#content { display: block; width: 100%; }
+
+.column {
+  float: left;
+  border-right: 1px solid #ddd;
+}
+
+.row {
+  width: 100%
+}
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  /*#content { flex-direction: column; }*/
+
+  .contain_columns {
+    flex-direction: column;
+  }
+
+  .contain_rows {
+    flex-direction: row;
+  }
+
+}
+
+/* Medium devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px){
+
+  /*#content { flex-direction: row; }*/
+
+  #articles{}
+
+  #essays{
+    flex: 0 0 300px;
+  }
+
+}
+
+/* Article layout */
+article {
+  padding: 10px;
+}
+
+
+/* Primary article layout */
+article.primary .title {
+  font-size: 32pt;
+}
+
+article.primary .subtitle {
+  font-size: 16pt;
+  line-height: 18pt;
+}
+
+
+/* Secondary article layout */
+article.secondary .title {
+  font-size: 24pt;
+}
+
+article.secondary .subtitle {
+  font-size: 16pt;
+}
+
+
+/* Essay layout */
+article.essay .title {
+  font-size: 20pt;
+}
+
+article.essay .subtitle {
+  font-size: 14pt;
+  line-height: 16pt;
+}
+
+
+/* Fonts and colours */
+.title{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.subtitle{
+  font-family: Georgia, Times, serif;
+}
+
+.tag {
+  font: bold 14px/16px Helvetica, Arial, sans-serif;
+  color: #BB0000;
+}
+
+.date {
+  margin: 2px none;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+}

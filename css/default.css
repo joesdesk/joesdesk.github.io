@@ -1,0 +1,124 @@
+/* Load google fonts via API */
+@import url("https://fonts.googleapis.com/css?family=Assistant");
+@import url("https://fonts.googleapis.com/css?family=Ruda");
+
+/* Reset layouts */
+html, body, div, header, footer,
+h1, h2, h3, h4, h5, h6, a, p, span, img {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, span, img {
+  line-height: 100%;
+}
+
+/* Default layout suited for phones */
+html, body {
+  width: 100%;
+}
+
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  /*#content { flex-direction: column; }*/
+
+  .contain_columns {
+    flex-direction: column;
+  }
+
+  .contain_rows {
+    flex-direction: row;
+  }
+
+}
+
+
+/* Medium devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px){
+
+  /*#content { flex-direction: row; }*/
+
+  #articles{}
+
+  #essays{
+    flex: 0 0 300px;
+  }
+
+}
+
+
+/* Larger devices (landscape tablets, 960px and up) */
+@media only screen and (min-width: 960px) {
+
+  /* Limit html width if screen is wider */
+  html {
+    width: 960px;
+    margin: 0px auto;
+  }
+
+}
+
+/* Header and footer defaults */
+header, footer {
+  display: flex;
+  overflow: hidden;
+  background-color: #000080;
+}
+
+/* Header components layout */
+header div, footer div {
+  display: block;
+  float: left;
+}
+
+header div.home {
+  flex: 1;
+  padding: 10px 0px 10px 10px;
+}
+
+header div.badges {
+  flex: 0 0 auto;
+}
+
+/* Footer components layout */
+footer div.copyright {
+  width: 100%;
+  text-align: center;
+}
+
+footer div.copyright span{
+  color: white;
+  font: 400 14px/16px "Assistant", Arial, Helvetica, sans-serif;
+}
+
+/* Logo layout */
+span.logo {
+  display: inline-flex;
+  height: 25px;
+  align-items: center;
+}
+
+span.logo {
+  color: white;
+  text-decoration: none;
+  font: 400 22px/24px "Assistant", Arial, Helvetica, sans-serif;
+}
+
+span.logo span {
+  font-weight: 700;
+}
+
+/* Badges */
+div.badges a {
+  display: block;
+  float: left;
+  line-height: 0px;
+}
+
+div.badges img {
+  padding: 10px;
+  border-left: 1px solid white;
+}
